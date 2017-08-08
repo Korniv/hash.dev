@@ -11,6 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/*Route::any('/{user?}', function ($user = false) {
+    if ($user)
+    {
+        if ($user == 'putin')
+        {
+            return $user. 'HUILO!';
+        }
+        return 'Welcome '.$user;
+    }
+    return 'Welcome unnamed user!';
+});*/
+Route::get('/', 'SiteController@index');
+

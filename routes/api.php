@@ -13,6 +13,9 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+Route::/*middleware('auth:api')->*/get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/hash/{hash_method}/{data?}', 'HashController@hash');
+Route::get('/unhash/{hash_method}/{hash}', 'HashController@unhash');
